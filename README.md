@@ -1,7 +1,7 @@
 # DuAnTotNghiep: 
 //đăng nhập
-Phone Number : 0909916020
-password : Nhatlam452@
+Phone Number : 0365559821
+password : TungTon@123
 
 //dùng để đăng ký 
 PhoneNumber : 0789867336    
