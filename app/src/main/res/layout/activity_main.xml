@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.MainActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpMainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationMain"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/custom_bottom_navigation_shape"
+            android:elevation="3dp"
+            app:itemIconTint="@color/custom_bottom_color_item"
+            app:itemRippleColor="@android:color/transparent"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/menu_bottom_navigation" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/layoutSetting"
+        android:layout_width="258dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/transparent"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#B000623B" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingStart="20dp">
+
+            <ImageView
+                android:id="@+id/imgClose"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:layout_margin="20dp"
+                android:src="@drawable/ic_close" />
+
+            <LinearLayout
+                android:id="@+id/llUserInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/cimgAvtSetting"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/custom_avt_shape"
+                    android:padding="2dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_person_add_alt_1_24" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tvUserNameSetting"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:lineHeight="20dp"
+                            android:textColor="@color/white"
+                            android:textSize="19dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/imgChangeUserInfo"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_drive_file_rename_outline_fill0_wght400_grad0_opsz48"
+                            app:tint="@color/white" />
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/tvEmailSetting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lineHeight="20dp"
+                        android:lines="1"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:lineHeight="20dp"
+                    android:text="@string/notifications"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <Switch
+                    android:id="@+id/switchNotification"
+                    android:layout_width="76dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="12dp"
+                    android:checked="false" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvSavedAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/saved_address"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvLanguage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/language"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvAU"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/about_us"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/help"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvPrivacyPolice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/privacy_police"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvTOS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/term_of_service"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvContactUsSetting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/contact_us"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvTellYourFiend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/tell_your_friend"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/tvLogOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/log_out"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="100dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/white" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/tvCopyright"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imgFb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_contact_fb"
+                />
+            <ImageView
+                android:id="@+id/imgInsta"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_contact_ins"
+                />
+            <ImageView
+                android:id="@+id/imgYoutube"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_contact_youtube"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvCopyright"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentBottom="true"
+            android:lineHeight="12dp"
+            android:textSize="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="© 2021 Gz Musical Company. All rights reserved."
+            />
+    </RelativeLayout>
+    <TextView
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/tvConnectionMain"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
+        android:background="#80000000"
+        android:text="@string/don_t_have_connection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

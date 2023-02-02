@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/rltGoToOD"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cimgPaymentMethod"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_momo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/cimgPaymentMethod"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvItemPaymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thanh toán bằng Momo"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvItemOrderHistoryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="23-12-2000"
+            android:textSize="12dp"
+            android:textStyle="italic" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="10dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvTotalOrderHistory"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:text="- 24.000.000 VND"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tvStatusOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:text="Đang giao hàng"
+        />
+    </LinearLayout>
+</RelativeLayout>

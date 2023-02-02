@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".Fragments.CartFragment">
+
+    <RelativeLayout
+        android:id="@+id/rltToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="20dp"
+        android:paddingHorizontal="40dp">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_logo_white" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llTab"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/rltToolbar"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:textAllCaps="true"
+            android:id="@+id/tvDelivery"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/cartTabColor"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:text="@string/delivery"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textAllCaps="true"
+            android:id="@+id/tvGoToStore"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:lineHeight="20dp"
+            android:text="@string/go_to_store"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/svCart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/llTab"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+
+                <LinearLayout
+                    android:layout_width="367dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/inner_shadow"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rltStore"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp">
+
+                        <ImageView
+                            android:id="@+id/imgPin"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/img_20" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_toRightOf="@id/imgPin"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvStoreNameCart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:lineHeight="20dp"
+                                android:text="Gz Musical "
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvStoreAddressCart"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:lineHeight="20dp"
+                                android:maxLines="2"
+                                android:textColor="@color/textColor"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <ImageView
+
+                            android:id="@+id/imgChooseStore"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="30dp"
+                            android:src="@drawable/ic_edit_location"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlCustomer"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:gravity="center_vertical"
+                        android:paddingStart="20dp">
+
+                        <View
+                            android:layout_width="200dp"
+                            android:layout_height="1dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#4D000000" />
+
+                        <ImageView
+                            android:id="@+id/imgTo"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/img_21" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_toRightOf="@id/imgTo"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvAddressCustomerName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:lineHeight="20dp"
+                                android:text="Your Address "
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvAddressCustomer"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:lineHeight="20dp"
+                                android:maxLines="2"
+                                android:text="Can't get your Location, Please granted permission or use your saved address "
+                                android:textColor="@color/textColor"
+                                android:textSize="12dp" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgChooseAddress"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="30dp"
+                            android:src="@drawable/ic_edit_location"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingStart="20dp">
+
+                <TextView
+                    android:id="@+id/tvYO"
+                    android:layout_width="137dp"
+                    android:layout_height="23dp"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/custom_button_oval"
+                    android:gravity="center"
+                    android:lineHeight="20dp"
+                    android:text="@string/your_order"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvNotificationCart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:text="* Swipe to left to delete item"
+                android:textColor="#97D50000"
+                android:textSize="12dp"
+                android:textStyle="italic" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvCartFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/custom_rcv_border"
+                android:paddingHorizontal="5dp"
+                android:paddingVertical="10dp" />
+
+            <TextView
+                android:layout_width="137dp"
+                android:layout_height="23dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_button_oval"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:text="@string/note"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edtNoteOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_rcv_border"
+                android:hint="Write your note for Us"
+                android:maxHeight="150dp"
+                android:maxLength="254"
+                android:minHeight="50dp"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="137dp"
+                android:layout_height="23dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_button_oval"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:text="@string/payment_method"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cvCardPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/imgPaymentMethod"
+                        android:layout_width="109dp"
+                        android:layout_height="58dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_cod" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+
+                    android:id="@+id/tvPaymentMethodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/cvCardPayment"
+                    android:lineHeight="20dp"
+                    android:text="Thanh toán khi nhận hàng"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNameCartPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvPaymentMethodName"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/cvCardPayment"
+                    android:lineHeight="20dp"
+                    android:text="Nguyen Nhat Lam"
+                    android:textColor="@color/textColor"
+                    android:textSize="10dp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/imgPricePaymentMethod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNameCartPayment"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@id/cvCardPayment"
+                    android:lineHeight="20dp"
+                    android:text="$ 256.40"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12dp"
+                    android:textStyle="italic" />
+
+                <ImageView
+                    android:id="@+id/imgChangePaymentMethod"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_navigate_next_24"
+                    app:tint="#00623B" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCardPayment"
+                    android:drawableLeft="@drawable/ic_shipping"
+                    android:gravity="center"
+                    android:paddingStart="4dp"
+                    android:text="Shipping time"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvShippingTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/cvCardPayment"
+                    android:gravity="right|center_vertical"
+                    android:text="Now"
+                    android:textColor="#D9D07E"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="137dp"
+                android:layout_height="23dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_button_oval"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:text="@string/amount_detail"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCardPayment"
+                    android:gravity="center"
+                    android:text="@string/price"
+                    android:textColor="@color/textColor"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tvCartPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCardPayment"
+                    android:gravity="right"
+                    android:text="$ 0.0"
+                    android:textColor="#D9D07E"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCardPayment"
+                    android:gravity="center"
+                    android:text="@string/shipping_charges"
+                    android:textColor="@color/textColor"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tvShippingPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCardPayment"
+                    android:gravity="right"
+                    android:text="$ 40.000"
+                    android:textColor="#D9D07E"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCardPayment"
+                    android:gravity="center"
+                    android:text="@string/total"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvCartTotalPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCardPayment"
+                    android:gravity="right"
+                    android:text="$ 0.0"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnPayment"
+                android:layout_width="113dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/custom_button_oval"
+                android:text="@string/pay_now"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="12dp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

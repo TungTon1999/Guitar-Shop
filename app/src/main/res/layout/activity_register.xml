@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".Activities.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/imgBackRegister"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_back" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tvHi"
+            android:layout_width="16dp"
+            android:layout_height="24dp"
+            android:lineHeight="24dp"
+            android:text="HI"
+            android:textColor="#8A8B7A"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/imgHi"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="20dp"
+            android:layout_toRightOf="@id/tvHi"
+            android:src="@drawable/img_hello" />
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgHi"
+            android:lineHeight="31.5dp"
+            android:text="@string/welcome_to"
+            android:textColor="@color/black"
+            android:textSize="21dp"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvWelcome"
+            android:lineHeight="31.5dp"
+            android:text="Gz Musical"
+            android:textColor="@color/colorPrimary"
+            android:textSize="21dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="69dp"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_logo_green" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingVertical="10dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:paddingHorizontal="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/custom_button_oval"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:text="@string/login_details"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="345dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/this_will_be_your_username"
+                android:textColor="@color/textColor"
+                android:textStyle="bold" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tipPhoneNumberRegister"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                app:errorEnabled="true"
+                android:layout_marginTop="5dp"
+                android:hint="@string/phone_number">
+
+                <EditText
+                    android:id="@+id/edtPhoneNumberRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:inputType="number"
+                    android:lineHeight="20dp"
+                    android:lines="1"
+                    android:maxLength="10"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tipPassword"
+                app:errorEnabled="true"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:counterEnabled="true"
+                app:counterMaxLength="15"
+                android:hint="@string/password"
+                app:boxStrokeColor="#FF0000"
+                app:hintTextColor="#FF0000"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@id/edtConfirmPassword"
+                    android:id="@+id/edtPasswordRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:lines="1"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutCheckPassword"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCheckLength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="x"
+                        android:textColor="#D50000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Length between 8 to 15"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCheckDigit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="x"
+                        android:textColor="#D50000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contain at least one digit"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCheckLowercase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="x"
+                        android:textColor="#D50000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contain at least one lowercase character"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCheckUppercase"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="x"
+                        android:textColor="#D50000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contain at least one uppercase character"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvCheckSpecialCharacter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:text="x"
+                        android:textColor="#D50000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contain at least one special character"
+                        android:textColor="@color/black"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="345dp"
+                android:id="@+id/tipConfirmPassword"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                app:errorEnabled="true"
+                app:passwordToggleEnabled="true"
+                android:hint="@string/confirm_password">
+
+                <EditText
+                    android:inputType="textPassword"
+                    android:id="@+id/edtConfirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:lines="1"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="144dp"
+                android:layout_height="29dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_button_oval"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:text="@string/personal_details"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tipSalutation"
+                android:layout_width="345dp"
+                app:errorEnabled="true"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/salutations">
+
+                <EditText
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    android:id="@+id/edtSalutation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tipFirstName"
+                android:layout_width="345dp"
+                app:errorEnabled="true"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/first_name">
+
+                <EditText
+                    android:inputType="text"
+                    android:id="@+id/edtFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:lines="1"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                app:errorEnabled="true"
+                android:id="@+id/tipLastName"
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/last_name">
+
+                <EditText
+                    android:inputType="text"
+
+                    android:id="@+id/edtLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:lines="1"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="105dp"
+                android:layout_height="29dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_button_oval"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:text="@string/birthday"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="354dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:lineHeight="20dp"
+                android:text="@string/we_would_never_want_to_miss_such_a_special_day_your_birthday_cannot_be_changed_after_submission"
+                android:textColor="@color/textColor"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="345dp"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tipDate"
+                    app:errorEnabled="true"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/day">
+
+                    <EditText
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:id="@+id/edtDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:lineHeight="20dp"
+                        android:lines="1"
+                        android:textColor="@color/textColor"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tipMonth"
+                    app:errorEnabled="true"
+                    android:layout_width="213dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:hint="@string/month">
+
+                    <EditText
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:id="@+id/edtMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:lineHeight="20dp"
+                        android:textColor="@color/textColor"
+                        android:textSize="14dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="144dp"
+                android:layout_height="29dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_button_oval"
+                android:gravity="center"
+                android:lineHeight="20dp"
+                android:text="@string/contact_address"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="345dp"
+                android:id="@+id/tipAddress"
+                app:errorEnabled="true"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/address">
+
+                <EditText
+                    android:imeOptions="actionDone"
+                    android:id="@+id/edtAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:lines="1"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="345dp"
+                app:errorEnabled="true"
+                android:id="@+id/tipCity"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/city">
+
+                <EditText
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    android:id="@+id/edtCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/tipDistrict"
+                app:errorEnabled="true"
+                android:hint="@string/district">
+
+                <EditText
+                    android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:id="@+id/edtDistrict"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tipWard"
+                android:layout_width="345dp"
+                app:errorEnabled="true"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/ward">
+
+                <EditText
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down_24"
+                    android:id="@+id/edtWard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:lineHeight="20dp"
+                    android:textColor="@color/textColor"
+                    android:textSize="14dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+
+                android:layout_width="345dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/phone_number_preferences_and_terms"
+                android:textColor="@color/textColor"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="345dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp">
+
+                <CheckBox
+                    android:id="@+id/cbRegisterNotification"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="left"
+                    android:buttonTint="@color/colorPrimary" />
+
+                <TextView
+                    android:layout_width="285dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_toRightOf="@id/cbRegisterNotification"
+                    android:lineHeight="20dp"
+                    android:text="@string/i_do_not_wish_to_receive_news_special_offers_and_more_form_gz_musical"
+                    android:textColor="@color/textColor"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="20dp"
+                android:lineHeight="20dp"
+                android:text="@string/by_clicking_this_button_i_agree_to_the_gz_musical_site"
+                android:textColor="@color/textColor"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTOSRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="25dp"
+                android:lineHeight="20dp"
+                android:text="@string/term_of_service"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="102dp"
+                android:layout_height="35dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_button_oval"
+                android:lineHeight="20dp"
+                android:text="@string/join_now"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
